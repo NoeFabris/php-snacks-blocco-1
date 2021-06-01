@@ -1,14 +1,12 @@
 <?php
 
-$partita1Tappa1 = [
+$partiteTappa1 = [
     [
         'squadraOspite' => 'Squadra1',
         'squadraCasa' => 'Squadra2',
         'puntiSquadraOspite' => 57,
         'puntiSquadraCasa' => 80
-    ]
-    ];
-$partita2Tappa1 = [
+    ],
     [
         'squadraOspite' => 'Squadra3',
         'squadraCasa' => 'Squadra4',
@@ -17,7 +15,7 @@ $partita2Tappa1 = [
     ]
     ];
 
-var_dump($partita1Tappa1);
+var_dump($partiteTappa1);
 
 ?>
 
@@ -36,8 +34,25 @@ var_dump($partita1Tappa1);
     <main>
     
     <h1>Risultati:</h1>
-    <p><?php echo $partita1Tappa1[0]['squadraOspite'] ?> - <?php echo $partita1Tappa1[0]['squadraCasa'] ?> | <?php echo $partita1Tappa1[0]['puntiSquadraOspite'] ?>-<?php echo $partita1Tappa1[0]['puntiSquadraCasa'] ?></p>
-    <p><?php echo $partita2Tappa1[0]['squadraOspite'] ?> - <?php echo $partita2Tappa1[0]['squadraCasa'] ?> | <?php echo $partita2Tappa1[0]['puntiSquadraOspite'] ?>-<?php echo $partita2Tappa1[0]['puntiSquadraCasa'] ?></p>
+    <ul>
+    
+    <?php 
+    for ($i=0; $i < count($partiteTappa1); $i++) { 
+        $partitaCorrennte = $partiteTappa1[$i];
+
+        $nomiSquadre = $partitaCorrennte['squadraOspite']. ' - ' . $partitaCorrennte['squadraCasa'];
+        $puntiSquadre = $partitaCorrennte['puntiSquadraOspite']. ' - ' . $partitaCorrennte['puntiSquadraCasa'];
+        $testoFinale = $nomiSquadre . ' | ' . $puntiSquadre;
+        
+        ?>
+    
+    <li><?php echo $testoFinale ?></li>
+
+    <?php
+    }
+    ?>
+    </ul>
+
 
     
     </main>

@@ -1,12 +1,23 @@
 <?php
 
 $login = [
-    'name' => $_GET['name'],
-    'mail' => $_GET['mail'],
-    'age' => $_GET['age']
+    'name' => '',
+    'mail' => '',
+    'age' => ''
 ];
 
 $access = false;
+
+if (key_exists('name', $_GET)) {
+    $login['name'] = $_GET['name'];
+};
+if (key_exists('mail', $_GET)) {
+    $login['mail'] = $_GET['mail'];
+};
+if (key_exists('age', $_GET)) {
+    $login['age'] = $_GET['age'];
+};
+
 
 var_dump($login);
 // echo $login['name'];
